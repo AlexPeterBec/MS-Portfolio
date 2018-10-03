@@ -1,7 +1,8 @@
 # Various projects from Big Data MS @TelecomParisTech 2018-2019
 
-## Web Crawling python
+## Python Web Scraping
+- Weather Scraping : http://forecast.weather.gov
 
-## PySpark ML : Iris dataset classification 
-- Bayes 
-- Random Forest Classifiers)
+## PySpark ML 
+- Iris Classification : Bayes, Random Forest 
+
