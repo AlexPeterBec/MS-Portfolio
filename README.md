@@ -1,4 +1,4 @@
-# Various projects from Big Data MS @TelecomParisTech 2018-2019
+# Projects from MS @TelecomParisTech 2018-2019
 
 ## Python Web Scraping
 - Weather Scraping : http://forecast.weather.gov
