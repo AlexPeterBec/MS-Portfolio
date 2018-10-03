@@ -3,5 +3,5 @@
 ## Web Crawling python
 
 ## PySpark ML : Iris dataset classification 
-##### Bayes 
-##### Random Forest Classifiers)
+- Bayes 
+- Random Forest Classifiers)
