@@ -55,6 +55,18 @@ FROM existingTable
 WHERE CLAUSE
 ```
 
+#### Create hive report from query
+```
+INSERT OVERWRITE DIRECTORY 'path/to/output'
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\t'
+	SELECT prénom, count(*) as cnt
+	FROM dbName.tableName
+	GROUP BY prénom 
+	ORDER BY cnt DESC
+	LIMIT 100;
+```
+
 
 # Advanced Hive
 
