@@ -9,6 +9,9 @@ hive
 Manage Databases
 ```
 create database dbName;
+use dbName;
+show databases;
+show tables;
 ```
 
 #### Create Basic Hive table
