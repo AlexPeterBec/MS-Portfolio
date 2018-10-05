@@ -14,3 +14,6 @@
 ## Python Toolbox
 - Basic Dataviz Pyplot
 
+## Java Distributed MapReduce
+Implementation of a distributed MapReduce algorithm across 3 computers.
+
