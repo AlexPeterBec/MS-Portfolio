@@ -15,5 +15,5 @@
 - Basic Dataviz Pyplot
 
 ## Java Distributed MapReduce
-Implementation of a distributed MapReduce algorithm across 3 computers.
+Implementation of a distributed Java MapReduce algorithm across 3 computers.
 
