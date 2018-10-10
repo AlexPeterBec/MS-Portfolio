@@ -1,6 +1,5 @@
-Java Distributed Map-Reduce/.metadata
-Java Distributed Map-Reduce/.idea
-Java Distributed Map-Reduce/out
+Java Distributed Map-Reduce/
 mapreduce-eclipse/.settings
-/.metadata/
+.gitignore.swp
 .recommenders
+.metadata

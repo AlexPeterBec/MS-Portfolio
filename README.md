@@ -7,6 +7,7 @@
 ## Python Web Scraping
 - Weather Scraping : **forecast.weather.gov**
 - Popularity Comparison : **purepeople.com**
+- Financial Reports Scraping : **reuters.com/finance**
 
 ## PySpark ML 
 - Iris Classification : Bayes, Random Forest 
