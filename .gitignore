@@ -1,5 +1,6 @@
 Java Distributed Map-Reduce/
 mapreduce-eclipse/.settings
+.*
 .gitignore.swp
 .recommenders
 .metadata
