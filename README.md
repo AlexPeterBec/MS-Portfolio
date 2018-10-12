@@ -8,6 +8,7 @@
 - Weather Scraping : **forecast.weather.gov**
 - Popularity Comparison : **purepeople.com**
 - Financial Reports Scraping : **reuters.com/finance**
+- Discounts on shopping sites : **Fnac/Darty**
 
 ## PySpark ML 
 - Iris Classification : Bayes, Random Forest 
