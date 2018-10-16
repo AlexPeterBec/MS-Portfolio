@@ -8,7 +8,6 @@ import java.util.concurrent.TimeUnit;
 
 public class MasterDev {
 	
-	
 	private static void readOutput(Process p) throws IOException, InterruptedException {
 		
 		System.out.println("=== Standard output ===");
