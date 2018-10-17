@@ -10,8 +10,10 @@
 - Financial Reports Scraping : **reuters.com/finance**
 - Discounts on shopping sites : **Fnac/Darty**
 
-## PySpark ML 
+## Spark Machine Learning 
 - Iris Classification : Bayes, Random Forest 
+- Iris & Diabetes Clustering : K-means 
+- Tree Data : Decision Tree Python & Random Forest Scala
 
 ## Python Toolbox
 - Basic Dataviz Pyplot
