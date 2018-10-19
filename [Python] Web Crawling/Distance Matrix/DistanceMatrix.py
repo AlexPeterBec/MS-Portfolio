@@ -26,13 +26,18 @@ def create_list_cities(file):
 
     return(list_cities)
 
+def read_cities_xls(file):
+    pop_xls = pd.read_excel(file, skiprows=7, sheetname="Communes")
+
 
 def api_distance(source, destination):
     url = "https://fr.distance24.org/route.json?stops="+source+"|"+destination
+    # Voir google maps
 
 
 def main():
     print(create_list_cities("cities.txt"))
+    read_cities_xls("ensemble.xls")
 
 if __name__ == "__main__":
     main()
