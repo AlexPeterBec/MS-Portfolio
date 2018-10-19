@@ -24,16 +24,15 @@ def create_list_cities(file):
     for line in cities_file:
         list_cities.append(line.split('\t')[1])
 
+    return(list_cities)
+
 
 def api_distance(source, destination):
     url = "https://fr.distance24.org/route.json?stops="+source+"|"+destination
 
 
 def main():
-    create_list_cities("cities.txt")
-
-
-
+    print(create_list_cities("cities.txt"))
 
 if __name__ == "__main__":
     main()
