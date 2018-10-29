@@ -1,6 +1,7 @@
-package partSix;
+package partNine;
 
 import java.io.*;
+
 
 class MyThread extends Thread {
 	BufferedReader reader;
@@ -66,13 +67,11 @@ public class DeployDev {
 			
 			
 			
-			/* CREATE FOLDER in /tmp/abec 
+			/* CREATE FOLDER in /tmp/abec */
 			System.out.println("Create folder : /tmp/abec");
 			
 			ProcessBuilder pb_mkdir_tmp = new ProcessBuilder(
-					"ssh", 
-					"-o",
-					"StrictHostKeyChecking=no",
+					"ssh", "-o", "StrictHostKeyChecking=no",
 					"abec@" + line, 
 					"mkdir", "-p", "/tmp/abec/");
 			Process p1 = pb_mkdir_tmp.start();
@@ -82,28 +81,24 @@ public class DeployDev {
 			System.out.println("Create folder : /tmp/abec/splits");
 			
 			ProcessBuilder pb_mkdir_splits = new ProcessBuilder(
-					"ssh", 
-					"-o",
-					"StrictHostKeyChecking=no",
+					"ssh", "-o", "StrictHostKeyChecking=no",
 					"abec@" + line, 
 					"mkdir", "-p", "/tmp/abec/splits");
 			Process p2 = pb_mkdir_splits.start();
 			
 			dp.startThreads(pb_mkdir_splits);
-			*/
 			
-			System.out.println("Delete existing jar" + line);
+			/*
+			System.out.println("Delete existing jar " + line);
 			ProcessBuilder rm_scp = new ProcessBuilder(
-					"ssh",
-					"-o",
-					"StrictHostKeyChecking=no",
+					"ssh", "-o", "StrictHostKeyChecking=no",
 					"abec@" + line,
 					"rm /tmp/abec/slavenine.jar");
 			dp.startThreads(rm_scp);
 			
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			
-			System.out.println("Create file in /tmp/" + line);
+			System.out.println("Move JAR into : " + line);
 			ProcessBuilder pb_scp = new ProcessBuilder(
 					"scp",
 					"-o",
@@ -112,6 +107,7 @@ public class DeployDev {
 					"abec@" + line + ":/tmp/abec/slavenine.jar");
 			
 			dp.startThreads(pb_scp);
+			*/
 			
 		}
 		

@@ -83,15 +83,10 @@ public class MasterDev {
 
 				System.out.println("| Run slave jar on file s" + i + ".txt with " + this.computers[count]);
 				ProcessBuilder pb_slave = new ProcessBuilder(
-						"ssh", 
-						"-o",
-						"StrictHostKeyChecking=no", 
+						"ssh", "-o", "StrictHostKeyChecking=no", 
 						"abec@" + this.computers[count], 
-						"java", 
-						"-jar",
-						"/tmp/abec/slavenine.jar", 
-						"0", 
-						"/tmp/abec/splits/s" + i + ".txt");
+						"java", "-jar", "/tmp/abec/slavenine.jar", 
+						"0", "/tmp/abec/splits/s" + i + ".txt");
 
 				pb_slaves[i] = pb_slave;
 				// this.startKeys(pb_slave, hm, "UM" + count);
@@ -145,6 +140,42 @@ public class MasterDev {
 			this.startThreads(pb_scps[2]);
 		}
 	}
+	
+	public void launchMap() throws IOException {
+		
+		int count = 0;
+
+		Map<String, ArrayList<String>> hm = new HashMap<String, ArrayList<String>>();
+
+		while ((count < COUNT)) {
+			ProcessBuilder[] pb_slaves = new ProcessBuilder[COUNT];
+
+			System.out.println("COMPUTER : " + this.computers[count]);
+
+			/* RUN SLAVE. JAR */
+			for (int i = 0; i < COUNT; i++) {
+				
+				System.out.println("| Run slave jar on file s" + i + ".txt with " + this.computers[count]);
+				
+				ProcessBuilder pb_slave = new ProcessBuilder(
+						"ssh", "-o", "StrictHostKeyChecking=no", 
+						"abec@" + this.computers[count], 
+						"java", "-jar", "/tmp/abec/slave.jar", "0", 
+						"/tmp/abec/splits/s" + i + ".txt");
+
+				pb_slaves[i] = pb_slave;
+
+			}
+			
+			this.startKeys(pb_slaves[0], hm, "UM" + 0);
+			this.startKeys(pb_slaves[1], hm, "UM" + 1);
+			this.startKeys(pb_slaves[2], hm, "UM" + 2);
+
+			count++;
+
+		}
+		
+	}
 
 	public MasterDev(String fileDispos) throws IOException {
 
@@ -160,7 +191,9 @@ public class MasterDev {
 			this.computers[count] = line;
 			count++;
 		}
+		
 		br.close();
+		
 	}
 
 	public static void main(String[] args) throws IOException, InterruptedException {
@@ -169,22 +202,8 @@ public class MasterDev {
 
 		ms.pasteSplits();
 
-		/*
-		 * Map<String, String> umx_machines = ms.getMapsComputer();
-		 * 
-		 * ms.buildUMs();
-		 * 
-		 * Map<String, ArrayList<String>> keys_umx = ms.waitForMap();
-		 * System.out.println("Keys / UMx : " + keys_umx.toString());
-		 * System.out.println("UMX / Machines : " + umx_machines.toString());
-		 * ms.shuffle(umx_machines, keys_umx);
-		 * 
-		 * Map<String, ArrayList<String>> distributedKeys = ms
-		 * .distributeKeys(keys_umx); System.out.println("Distributed keys : " +
-		 * distributedKeys.toString());
-		 * 
-		 * ms.startReducingSortedMaps(keys_umx, distributedKeys);
-		 */
+		ms.launchMap();
+	
 	}
 
 }
